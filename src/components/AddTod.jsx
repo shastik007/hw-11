@@ -3,6 +3,13 @@ import Input from './UI/Input'
 import ReactDOM from 'react-dom'
 import Backdrop from './UI/Backdrop'
 import ErrorModal from './UI/ErrorModal'
+import Buttonn from './UI/Button'
+import styled from 'styled-components'
+
+const Form = styled.form`
+	display: flex;
+	justify-content: space-around;
+`
 
 const reducer = (state, action) => {
 	if (action.type === 'INPUT_CHANGE') {
@@ -52,12 +59,18 @@ const AddTod = (props) => {
 		}
 
 		props.getObj(state.value, state.date)
+		state.value = ' '
 	}
 
 	return (
-		<form onSubmit={onSubmit}>
-			<Input value={state.value} onChange={onChange} type='text' />
-			<button type='submit'>add</button>
+		<Form onSubmit={onSubmit}>
+			<Input
+				placeholder='enter someone task'
+				value={state.value}
+				onChange={onChange}
+				type='text'
+			/>
+			<Buttonn type='submit'>add</Buttonn>
 			{state.modal && (
 				<ErrorModal
 					confirm={confirm}
@@ -65,7 +78,7 @@ const AddTod = (props) => {
 					massage={state.modal.massage}
 				/>
 			)}
-		</form>
+		</Form>
 	)
 }
 

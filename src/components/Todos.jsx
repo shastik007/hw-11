@@ -1,25 +1,51 @@
 import React from 'react'
 import Button from './UI/Button'
 import styled from 'styled-components'
+import { Checkbox } from '@mui/material'
+import DeleteButton from './UI/DeleteButton'
 
 const Li = styled.li`
 	max-width: 700px;
+	border: 1px solid black;
 	align-items: center;
 	color: white;
 	margin: 0 auto;
 	display: grid;
 	margin-bottom: 10px;
+	padding: 30px;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	transition: 1s;
+	transition: 0.5s;
+	animation: YES ease-in-out 1s;
+
+	&:hover{
+		box-shadow: 0 0 15px purple ;
+		border: 2px solid pink;
+
+	}
+
+	@keyframes YES {
+		0%{
+			opacity: 0;
+		}
+		100%{
+			opacity: 1;
+		}
+		
+	}
+	
 
 	& label {
-		width: 300px;
+		color: white;
+		width: 200px;
+		font-size: 25px;
+		text-shadow: 0 0 15px pink;
+		
 	}
 	& div {
-		width: 200px;
-	}
-	& input {
-		width: 40px;
+		color: white;
+		width: 100px;
+		font-size: 25px;
+		text-shadow: 0 0 15px ;
 	}
 
 	& .checked {
@@ -50,12 +76,12 @@ const Todos = (props) => {
 							{el.title}
 						</label>
 						<div>{el.date}</div>
-						<input
+						<Checkbox
 							checked={el.complete}
 							onChange={Checked}
 							id={el.id}
-							type='checkbox'
 						/>
+
 						<Button onClick={Delete} id={el.id}>
 							delete
 						</Button>

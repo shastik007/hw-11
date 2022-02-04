@@ -23,6 +23,7 @@ function App() {
 	return (
 		<div className='App'>
 			<Card>
+				 <h1 className='h1'> To do list </h1>			 
 				<AddTod getObj={getObj} />
 			</Card>
 			<Card>
