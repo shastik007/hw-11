@@ -8,10 +8,10 @@ const ModalPortal = (props) => {
 		<div className={classes.modal}>
 			<BackDrop />
 			<header className={classes.header}>
-				<h2>{props.title}</h2>
+				<h2>{props.massage}</h2>
 			</header>
 			<div className={classes.content}>
-				<p>{props.massage}</p>
+				<p>{props.title }</p>
 			</div>
 			<footer className={classes.actions}>
 				{props.children}

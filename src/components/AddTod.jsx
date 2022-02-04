@@ -23,7 +23,7 @@ const reducer = (state, action) => {
 	if (action.type === 'MODAL') {
 		return {
 			value: '',
-			modal: { massage: 'adsfasdfa', title: 'asdfasdfa' },
+			modal: { massage: 'your task could not be created !!', title: 'please fill in all fields !' },
 		}
 	}
 
@@ -65,7 +65,7 @@ const AddTod = (props) => {
 	return (
 		<Form onSubmit={onSubmit}>
 			<Input
-				placeholder='enter someone task'
+				placeholder='enter something'
 				value={state.value}
 				onChange={onChange}
 				type='text'
